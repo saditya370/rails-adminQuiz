@@ -1,0 +1,21 @@
+<%@exercise.mcqs.each do |a|%>
+    <%=a.quesname%><br>
+    <%= radio_button_tag a.id,a.option1%>
+    
+    <%=a.option1%>
+    <br>
+    <%= radio_button_tag a.id,a.option2%>
+    <%=a.option2%>
+    <br>
+    <%= radio_button_tag a.id,a.option3%>
+    <%=a.option3%>
+    <br>
+    <%= radio_button_tag a.id,a.option4%>
+    <%=a.option4%>
+    
+    
+    
+    <br>
+
+   
+<%end%>

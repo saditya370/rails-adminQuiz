@@ -1,0 +1,7 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<%@exercises.each  do |a|%>
+    <%=link_to "Start Exercise#{a.id}", exercise_path(a.id)%><br>
+<%end%>
