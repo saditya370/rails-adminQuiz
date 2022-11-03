@@ -75,3 +75,7 @@ end
 
 gem "devise", "~> 4.8"
 gem "sassc-rails"
+
+gem "prawn", "~> 2.4"
+
+gem 'pry', '~> 0.13.1'

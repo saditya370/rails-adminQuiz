@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :exercises
+  has_many :feedbacks
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

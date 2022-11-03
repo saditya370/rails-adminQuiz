@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'download',to: "feedback#download"
+  get 'preview',to: "feedback#preview"
+
+
+  resources :feedback
   # get 'exercises/index'
   resources :exercises
 

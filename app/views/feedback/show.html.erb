@@ -1,0 +1,28 @@
+
+
+<%=@exercise.id%>
+  <%=link_to "Download",download_path(@exercise.id)%>
+  
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.no</th>
+      <th scope="col">Total no. of questions</th>
+      <th scope="col">Correct </th>
+      <th scope="col">Incorrect</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%=@exercise.mcqs.count%></td>
+      <td><%=@feedback.point%> points</td>
+      <td><%= @exercise.mcqs.count - @feedback.point%> </td>
+    </tr>
+   
+  </tbody>
+</table>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_02_061834) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_051129) do
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.integer "user_id", null: false
@@ -18,6 +18,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_061834) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_exercises_on_user_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer "point", default: 0
+    t.integer "user_id", null: false
+    t.integer "exercise_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_feedbacks_on_exercise_id"
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
   create_table "mcqs", force: :cascade do |t|
@@ -47,5 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_061834) do
   end
 
   add_foreign_key "exercises", "users"
+  add_foreign_key "feedbacks", "exercises"
+  add_foreign_key "feedbacks", "users"
   add_foreign_key "mcqs", "exercises"
 end

@@ -1,0 +1,27 @@
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Exercise Attempted</th>
+      <th scope="col">Total no. of questions</th>
+      <th scope="col">Correct </th>
+      <th scope="col">Incorrect</th>
+       <th scope="col">Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%@feedback.each do |feed|%>
+    <tr>
+      <th scope="row"><%=feed.exercise_id%></th>
+     <% @exercise = Exercise.find(feed.exercise_id)%>
+      <td><%=@exercise.mcqs.count%></td>
+      <td><%=feed.point%></td>
+      <td> <%=@exercise.mcqs.count - feed.point%></td>
+        <td><%=(feed.point * 100)/@exercise.mcqs.count%></td>
+    </tr>
+   <%end%>
+  </tbody>
+
+</table>
